@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Itau Display';
+  src: url('https://www.itau.com.br/_arquivosestaticos/Itau/fonts/itau-display/ItauDisplay_W_Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Itau Display';
+  src: url('https://www.itau.com.br/_arquivosestaticos/Itau/fonts/itau-display/ItauDisplay_W_Bd.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply bg-itau-gray-100 font-sans;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
