@@ -53,4 +53,38 @@ export interface ProductMarketFit {
   };
 }
 
+export interface PortalEvaluation {
+  id: string;
+  userId: string;
+  createdAt: Date;
+  overallRating: number;
+  likertResponses: {
+    usability: number;
+    design: number;
+    performance: number;
+    features: number;
+    reliability: number;
+  };
+  qualitativeResponse: string;
+  sentiment?: 'positive' | 'neutral' | 'negative';
+}
+
+export interface EvaluationAnalysis {
+  id: string;
+  evaluationIds: string[];
+  createdAt: Date;
+  summary: string;
+  recommendations: string[];
+  trends: {
+    category: string;
+    trend: number;
+    insight: string;
+  }[];
+  sentimentDistribution: {
+    positive: number;
+    neutral: number;
+    negative: number;
+  };
+}
+
 export type DataMode = 'mock' | 'real';
